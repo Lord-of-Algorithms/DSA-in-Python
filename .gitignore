@@ -1,0 +1,28 @@
+# IDE and Editor folders
+*.iml
+.idea/
+*.vscode/
+*.eclipse
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
