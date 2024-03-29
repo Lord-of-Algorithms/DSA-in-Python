@@ -1,7 +1,7 @@
-# Initialize vertices
 from factory import GraphTraversalFactory, GraphTraversalMethod, GraphFactory, GraphRepresentation
 from graph.traversal.graph.vertex import Vertex
 
+# Initialize vertices
 a, b, c, d = Vertex("A"), Vertex("B"), Vertex("C"), Vertex("D")
 
 # Create graph and add edges
