@@ -33,7 +33,7 @@ def heap_sort(array, sort_nature):
 
 
 def demo_heap_sort():
-    """Demonstrates the usage of the Heap Sort function."""
+    """Demonstrates the usage of the heap sort function."""
     array = [64, 34, 25, 12, 22, 11, 90]
     print("Original array:", array)
 

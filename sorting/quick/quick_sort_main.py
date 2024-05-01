@@ -32,7 +32,7 @@ def quick_sort(array, partition_scheme):
 
 
 def demo_quick_sort():
-    """Demonstrates the usage of the Quick Sort function."""
+    """Demonstrates the usage of the quick sort function."""
     array = [3, 34, 25, 12, 22, 11, 90]
     print("Original array:", array)
 

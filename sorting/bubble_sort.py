@@ -15,7 +15,7 @@ def bubble_sort(array):
 
 
 def demo_bubble_sort():
-    """Demonstrates the usage of the Bubble Sort function."""
+    """Demonstrates the usage of the bubble sort function."""
     array = [64, 34, 25, 12, 22, 11, 90]
     print("Original array:", array)
 

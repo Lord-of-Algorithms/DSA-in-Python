@@ -13,7 +13,7 @@ def insertion_sort(array):
 
 
 def demo_insertion_sort():
-    """Demonstrates the usage of the Insertion Sort function."""
+    """Demonstrates the usage of the insertion sort function."""
     array = [64, 25, 12, 22, 11, 90, 18]
     print("Original array:", array)
 
@@ -22,6 +22,5 @@ def demo_insertion_sort():
     print("Sorted array:", array)
 
 
-# Example usage
 if __name__ == "__main__":
     demo_insertion_sort()

@@ -70,7 +70,7 @@ def merge_both_parts(array, aux_array, left, right, end):
 
 
 def demo_merge_sort():
-    """Demonstrates the usage of the Merge Sort function."""
+    """Demonstrates the usage of the merge sort function."""
     array = [64, 34, 25, 12, 22, 11, 90]
     print("Original array:", array)
 

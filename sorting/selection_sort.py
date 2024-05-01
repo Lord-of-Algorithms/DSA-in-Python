@@ -15,7 +15,7 @@ def selection_sort(array):
 
 
 def demo_selection_sort():
-    """Demonstrates the usage of the Selection Sort function."""
+    """Demonstrates the usage of the selection sort function."""
     array = [64, 25, 12, 22, 11, 90, 18]
     print("Original array:", array)
 
@@ -24,6 +24,5 @@ def demo_selection_sort():
     print("Sorted array:", array)
 
 
-# Example usage
 if __name__ == "__main__":
     demo_selection_sort()
