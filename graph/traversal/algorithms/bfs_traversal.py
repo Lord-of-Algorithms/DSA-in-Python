@@ -1,32 +1,19 @@
-from graph.traversal.algorithms.base_graph_traversal import GraphTraversal
+from graph.traversal.algorithms.base_graph_traversal import BaseGraphTraversal
 
 
-class BfsTraversal(GraphTraversal):
+class BfsTraversal(BaseGraphTraversal):
     """
     Implements the Breadth-First Search (BFS) traversal algorithm for graphs.
     """
 
-    def __init__(self):
-        self.traversal_path = []
-
     def traverse(self, graph, start_vertex):
         queue = [start_vertex]
-        start_vertex.visit()
-        self.traversal_path.append(start_vertex)
+        self.visit(start_vertex)
 
         while queue:
             head = queue.pop(0)
-            adjacent = graph.find_unvisited_adjacent(head)
-            while adjacent:
-                adjacent.visit()
-                self.traversal_path.append(adjacent)
-                queue.append(adjacent)
-                adjacent = graph.find_unvisited_adjacent(head)
-
-    def get_traversal_path(self):
-        return self.traversal_path
-
-    def reset_state(self):
-        for v in self.traversal_path:
-            v.reset_visited_status()
-        self.traversal_path.clear()
+            unvisited_neighbor = self.find_unvisited_neighbor(graph, head)
+            while unvisited_neighbor:
+                self.visit(unvisited_neighbor)
+                queue.append(unvisited_neighbor)
+                unvisited_neighbor = self.find_unvisited_neighbor(graph, head)
