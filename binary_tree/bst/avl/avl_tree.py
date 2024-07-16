@@ -25,7 +25,7 @@ def _get_balance(node):
     and a balance factor less than -1 indicates right-heavy imbalance.
 
     :param node: The node for which the balance factor is to be calculated.
-    :return: The balance factor of the node. If the node is null, returns 0.
+    :return: The balance factor of the node. If the node is None, returns 0.
     """
     if node is None:
         return 0
