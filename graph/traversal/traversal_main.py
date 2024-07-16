@@ -48,30 +48,35 @@ def create_graph(representation, vertices):
     return explorable_graph
 
 
-# Initialize vertices
-a, b, c, d = Vertex("A"), Vertex("B"), Vertex("C"), Vertex("D")
+def demo_traversal_algorithms():
+    # Initialize vertices
+    a, b, c, d = Vertex("A"), Vertex("B"), Vertex("C"), Vertex("D")
 
-# Create graph and add edges
-graph = create_graph(GraphRepresentation.MATRIX, [a, b, c, d])
-graph.set_edge(a, b)
-graph.set_edge(a, d)
-graph.set_edge(b, c)
-graph.set_edge(b, d)
-graph.set_edge(c, d)
+    # Create graph and add edges
+    graph = create_graph(GraphRepresentation.MATRIX, [a, b, c, d])
+    graph.set_edge(a, b)
+    graph.set_edge(a, d)
+    graph.set_edge(b, c)
+    graph.set_edge(b, d)
+    graph.set_edge(c, d)
 
-# Perform DFS traversal
-traversal = create_traversal(GraphTraversalMethod.DFS)
-traversal.traverse(graph, a)
-print("DFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
-traversal.reset_state()
+    # Perform DFS traversal
+    traversal = create_traversal(GraphTraversalMethod.DFS)
+    traversal.traverse(graph, a)
+    print("DFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
+    traversal.reset_state()
 
-# Perform recursive DFS traversal
-traversal = create_traversal(GraphTraversalMethod.DFS_RECURSIVE)
-traversal.traverse(graph, a)
-print("Recursive DFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
-traversal.reset_state()
+    # Perform recursive DFS traversal
+    traversal = create_traversal(GraphTraversalMethod.DFS_RECURSIVE)
+    traversal.traverse(graph, a)
+    print("Recursive DFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
+    traversal.reset_state()
 
-# Perform BFS traversal
-traversal = create_traversal(GraphTraversalMethod.BFS)
-traversal.traverse(graph, a)
-print("BFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
+    # Perform BFS traversal
+    traversal = create_traversal(GraphTraversalMethod.BFS)
+    traversal.traverse(graph, a)
+    print("BFS Traversal Path:", [str(vertex) for vertex in traversal.get_traversal_path()])
+
+
+if __name__ == "__main__":
+    demo_traversal_algorithms()

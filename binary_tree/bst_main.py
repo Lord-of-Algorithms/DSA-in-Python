@@ -1,11 +1,10 @@
+from enum import Enum
+
 from binary_tree.binary_tree_printer import BinaryTreePrinter
 from binary_tree.bst.avl.avl_tree import AvlTree
 from binary_tree.bst.red_black.red_black_tree import RedBlackTree
 from binary_tree.bst.standard.binary_search_tree_iterative import BinarySearchTreeIterative
 from binary_tree.bst.standard.binary_search_tree_recursive import BinarySearchTreeRecursive
-
-from enum import Enum
-
 from binary_tree.traversal.breadth_first_traversal import BreadthFirstTraversal
 from binary_tree.traversal.in_order_traversal import InOrderTraversal
 from binary_tree.traversal.post_order_traversal import PostOrderTraversal
@@ -70,9 +69,14 @@ def demonstrate_traversals(tree):
     traversal.traverse(tree.get_root())
 
 
-bst = create_tree(BstType.RedBlack)
-insert_keys_into_tree(bst, [20, 7, 9, 2, 40, 22, 70, 70, 25])
-BinaryTreePrinter.print_tree(bst.get_root())
-delete_keys_from_tree(bst, [20, 40, 2, 7])
-search_keys_in_tree(bst, [70, 44])
-demonstrate_traversals(bst)
+def demo_binary_tree():
+    bst = create_tree(BstType.RedBlack)
+    insert_keys_into_tree(bst, [20, 7, 9, 2, 40, 22, 70, 70, 25])
+    BinaryTreePrinter.print_tree(bst.get_root())
+    delete_keys_from_tree(bst, [20, 40, 2, 7])
+    search_keys_in_tree(bst, [70, 44])
+    demonstrate_traversals(bst)
+
+
+if __name__ == "__main__":
+    demo_binary_tree()
