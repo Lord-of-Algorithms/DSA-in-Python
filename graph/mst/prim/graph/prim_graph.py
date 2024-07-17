@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import Optional, List
+from typing import List
 
 from graph.vertex import Vertex
 from graph.weighted_graph import WeightedGraph
@@ -12,7 +12,7 @@ class PrimGraph(WeightedGraph):
     """
 
     @abstractmethod
-    def get_edges_for_source(self, source_vertex) -> Optional[List[Vertex]]:
+    def get_edges_for_source(self, source_vertex) -> List[Vertex]:
         """
         Retrieves a list of all edges originating from a specified vertex.
         """
