@@ -7,13 +7,13 @@ class ExplorableListGraph(ExplorableGraph):
     """
 
     def __init__(self):
-        self._adjacency_list = []
+        self.adjacency_list = []
 
     def add_vertex(self, vertex):
         if vertex is None:
             raise ValueError("Vertex cannot be None.")
-        if vertex not in self._adjacency_list:
-            self._adjacency_list[vertex] = []
+        if vertex not in self.adjacency_list:
+            self.adjacency_list[vertex] = []
 
     def set_edge(self, source, destination):
         if source is None or destination is None:
@@ -22,8 +22,8 @@ class ExplorableListGraph(ExplorableGraph):
             raise ValueError("Cannot add an edge from a vertex to itself.")
 
         # Assuming source and destination are already in the adjacency list.
-        self._adjacency_list[source].append(destination)
-        self._adjacency_list[destination].append(source)
+        self.adjacency_list[source].append(destination)
+        self.adjacency_list[destination].append(source)
 
     def get_neighbors(self, vertex):
-        return self._adjacency_list[vertex]
+        return self.adjacency_list[vertex]
