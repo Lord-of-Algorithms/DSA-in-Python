@@ -4,7 +4,7 @@ from graph.mst.prim.graph.prim_graph import PrimGraph
 
 class PrimListGraph(PrimGraph):
     """
-    Implements the PrimGraph using an adjacency list to represent the graph.
+    Extends the PrimGraph abstract base class using an adjacency list to represent the graph.
     """
 
     def __init__(self):

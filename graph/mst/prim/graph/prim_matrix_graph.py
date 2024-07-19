@@ -4,7 +4,7 @@ from graph.mst.prim.graph.prim_graph import PrimGraph
 
 class PrimMatrixGraph(PrimGraph):
     """
-    Implements the PrimGraph using an adjacency matrix to represent the graph.
+    Extends the PrimGraph abstract base class using an adjacency matrix to represent the graph.
     """
 
     NO_EDGE = float('inf')  # Use infinity to represent no edge
