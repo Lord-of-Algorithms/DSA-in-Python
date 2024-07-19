@@ -1,17 +1,3 @@
-from typing import List
-
-
-class VertexDistance:
-    """
-    Holds vertex and its associated distance. This helps manage the mapping of vertices
-    to their current shortest distances as known during the execution of Dijkstra's algorithm.
-    """
-
-    def __init__(self, vertex, distance):
-        self.vertex = vertex
-        self.distance = distance
-
-
 class VertexDistancePriorityQueue:
     """
     A priority queue specifically designed for Dijkstra's algorithm that manages vertices according to their distances.
@@ -19,6 +5,16 @@ class VertexDistancePriorityQueue:
     non-optimized priority queue. The queue maintains vertices in order of their distance from the source.
     Each time a vertex is removed, it ensures the vertex with the smallest distance is selected next.
     """
+
+    class VertexDistance:
+        """
+        Holds vertex and its associated distance. This helps manage the mapping of vertices
+        to their current shortest distances as known during the execution of Dijkstra's algorithm.
+        """
+
+        def __init__(self, vertex, distance):
+            self.vertex = vertex
+            self.distance = distance
 
     def __init__(self, max_size):
         """
@@ -29,7 +25,7 @@ class VertexDistancePriorityQueue:
         if max_size <= 0:
             raise ValueError("Maximum size must be greater than 0")
         self.max_size = max_size
-        self.vertex_distances: List[VertexDistance] = []
+        self.vertex_distances = []
         self.current_size = 0
 
     def is_empty(self):
@@ -65,7 +61,7 @@ class VertexDistancePriorityQueue:
             position += 1
 
         # Insert the vertex-distance pair at the found position
-        self.vertex_distances.insert(position, VertexDistance(vertex, distance))
+        self.vertex_distances.insert(position, self.VertexDistance(vertex, distance))
         self.current_size += 1
 
     def poll_smallest(self):
