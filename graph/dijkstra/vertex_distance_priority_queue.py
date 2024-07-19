@@ -89,7 +89,7 @@ class VertexDistancePriorityQueue:
         position = 0
         is_found = False
         while position < self.current_size:
-            if self.vertex_distances[position].vertex.__eq__(vertex):
+            if self.vertex_distances[position].vertex == vertex:
                 is_found = True
                 break
             position += 1
