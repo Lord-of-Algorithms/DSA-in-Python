@@ -55,7 +55,7 @@ class DoubleEndedLinkedList:
         while pred is not None and pred.data != pred_value:
             pred = pred.next
         if pred is None:
-            raise ValueError(f"Predecessor value {pred_value} not found in the list")
+            raise ValueError(f"Predecessor value {pred_value} not found in the list.")
         new_node = self.Node(value)
         new_node.next = pred.next
         pred.next = new_node
@@ -78,37 +78,32 @@ class DoubleEndedLinkedList:
 
     def delete_first(self):
         """
-        Deletes and returns the first node from the list. If the list is empty, returns None.
+        Deletes the first node from the list.
         """
         if self.is_empty():
-            return None
+            raise Exception("The list is empty.")
 
-        deleted_node = self.head
         if self.head == self.tail:
             self.head = None
             self.tail = None
         else:
             self.head = self.head.next
 
-        return deleted_node
-
     def delete_by_value(self, value):
         """
-        Deletes and returns the first occurrence of a node with
-        the specified value. If no such node exists,
-        does nothing and returns None.
+        Deletes the first occurrence of a node with
+        the specified value.
         """
         if self.is_empty():
-            return None
+            raise Exception("The list is empty.")
 
         if self.head.data == value:
-            temp = self.head
             if self.head == self.tail:
                 self.head = None
                 self.tail = None
             else:
                 self.head = self.head.next
-            return temp
+            return
 
         pred = self.head
         temp = self.head.next
@@ -120,17 +115,15 @@ class DoubleEndedLinkedList:
             pred.next = temp.next
             if pred.next is None:
                 self.tail = pred
-        return temp
+        else:
+            raise ValueError(f"Value {value} not found in the list.")
 
     def delete_last(self):
         """
-        Deletes and returns the last node from the list.
-        If the list is empty, returns None.
+        Deletes the last node from the list.
         """
         if self.is_empty():
-            return None
-
-        deleted_node = self.tail
+            raise Exception("The list is empty.")
 
         # If there's only one node in the list
         if self.head == self.tail:
@@ -145,5 +138,3 @@ class DoubleEndedLinkedList:
             # reference and the tail reference
             pred.next = None
             self.tail = pred
-
-        return deleted_node

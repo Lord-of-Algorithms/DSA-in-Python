@@ -49,7 +49,7 @@ class LinkedList:
         while pred is not None and pred.data != pred_value:
             pred = pred.next
         if pred is None:
-            raise ValueError(f"Predecessor value {pred_value} not found in the list")
+            raise ValueError(f"Predecessor value {pred_value} not found in the list.")
         node = self.Node(value)
         node.next = pred.next
         pred.next = node
@@ -68,26 +68,22 @@ class LinkedList:
 
     def delete_first(self):
         """
-        Deletes and returns the first node from the list. If the list is empty, returns None.
+        Deletes the first node from the list.
         """
         if self.is_empty():
-            return None
-        temp = self.head
+            raise Exception("The list is empty.")
         self.head = self.head.next
-        return temp
 
     def delete_by_value(self, value):
         """
-        Deletes and returns the first found node containing the specified value.
-        If no such node exists, does nothing and returns None.
+        Deletes the first found node containing the specified value.
         """
         if self.is_empty():
-            return None
+            raise Exception("The list is empty.")
         if self.head.data == value:
             # Delete the head
-            temp = self.head
             self.head = self.head.next
-            return temp
+            return
         pred = self.head
         temp = self.head.next
         while temp is not None and temp.data != value:
@@ -97,24 +93,22 @@ class LinkedList:
             # The node to be deleted is found.
             # Delete it by changing references.
             pred.next = temp.next
-        return temp
+        else:
+            raise ValueError(f"Value {value} not found in the list.")
 
     def delete_last(self):
         """
-        Deletes and returns the last node from the list.
-        If the list is empty, returns None.
+        Deletes the last node from the list.
         """
         if self.is_empty():
-            return None
+            raise Exception("The list is empty.")
         if self.head.next is None:
             # There is only one node
-            temp = self.head
             self.head = None
-            return temp
+            return
         pred = self.head
         temp = self.head.next
         while temp.next is not None:
             pred = pred.next
             temp = temp.next
         pred.next = None
-        return temp
