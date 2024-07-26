@@ -8,13 +8,16 @@ class BoundedArrayStack(Stack):
     that the stack's capacity is not exceeded.
     """
 
-    def __init__(self, size: int):
+    def __init__(self, capacity):
         """
-        Initializes the stack with a given size.
+        Initializes the stack with a given capacity.
+
+        :param capacity: The maximum number of items that the stack can hold.
+        :raises ValueError: If the capacity is less than 1.
         """
-        if size <= 0:
-            raise ValueError("Size must be greater than zero.")
-        self.data = [None] * size  # Initialize the stack with None to represent unused slots
+        if capacity < 1:
+            raise ValueError("Capacity must be at least 1.")
+        self.data = [None] * capacity  # Initialize the stack with None to represent unused slots
         # Index of the top element
         self.top = -1
 

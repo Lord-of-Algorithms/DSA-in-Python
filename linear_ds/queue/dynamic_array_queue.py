@@ -9,8 +9,8 @@ class DynamicArrayQueue(Queue):
     """
 
     def __init__(self, capacity):
-        if capacity <= 0:
-            raise ValueError("Capacity must be greater than zero.")
+        if capacity < 1:
+            raise ValueError("Capacity must be at least 1")
         self.data = [None] * capacity
         self.front = 0
         self.rear = -1
