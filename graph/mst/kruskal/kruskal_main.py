@@ -35,6 +35,10 @@ def build_mst(vertices, edges):
         if uf.find(edge.source) != uf.find(edge.destination):
             mst.append(edge)
             uf.union(edge.source, edge.destination)
+            # Check if the number of edges in MST is equal to
+            # the number of vertices - 1
+            if len(mst) == len(vertices) - 1:
+                break
 
     return mst
 
