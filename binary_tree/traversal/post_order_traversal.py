@@ -1,5 +1,6 @@
 from collections import deque
 
+from binary_tree.traversal.abstract_traversal import AbstractTraversal
 from binary_tree.traversal.traversal_nature import TraversalNature
 
 
@@ -37,7 +38,7 @@ def _recursive_post_order_traverse(node):
         node.visit()
 
 
-class PostOrderTraversal:
+class PostOrderTraversal(AbstractTraversal):
     """
     Class for performing post-order traversal on a binary tree.
     """

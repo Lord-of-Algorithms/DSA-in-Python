@@ -5,11 +5,9 @@ def min_value(root):
     :param root: The root node of the tree or subtree.
     :return: The minimum value key in the tree.
     """
-    value = root.get_key()
     while root.get_left() is not None:
-        value = root.get_left().get_key()
         root = root.get_left()
-    return value
+    return root.get_key()
 
 
 def search_recursive(current, key):

@@ -1,4 +1,4 @@
-from hashtable.hash_table import HashFunctonType
+from hashtable.hash_table import HashFunctionType
 from hashtable.hash_table import HashTable
 
 
@@ -9,7 +9,7 @@ from hashtable.hash_table import HashTable
 # an initial capacity between 150 and 200 could be more appropriate.
 # This provides ample space for all elements and minimizes the need for rehashing, enhancing performance.
 def demo_hash_table():
-    hash_table = HashTable(5, HashFunctonType.Division)
+    hash_table = HashTable(5, HashFunctionType.Division)
 
     # Insert key-value pairs into the hash table
     hash_table.put("Hydrogen", 1.008)

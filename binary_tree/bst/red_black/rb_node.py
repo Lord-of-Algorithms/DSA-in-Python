@@ -39,14 +39,6 @@ class RbNode(AbstractNode):
         """
         return not self.is_black
 
-    def is_black(self):
-        """
-        Checks if the node is black.
-
-        :return: True if the node is black, False if the node is red.
-        """
-        return self.is_black
-
     def set_black(self):
         """
         Sets the node's color to black.

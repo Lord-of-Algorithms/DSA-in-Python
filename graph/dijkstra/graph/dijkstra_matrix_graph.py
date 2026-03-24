@@ -66,8 +66,6 @@ class DijkstraMatrixGraph(DijkstraGraph):
     def get_edge_weight_between(self, source, destination):
         source_index = self.indices_map[source]
         destination_index = self.indices_map[destination]
-        if source_index is None or destination_index is None:
-            return self.INFINITY
         return self.adjacency_matrix[source_index][destination_index]
 
     def get_vertex_count(self):

@@ -4,7 +4,7 @@ from binary_tree.abstract_node import AbstractNode
 class Node(AbstractNode):
     """
     Represents a node in a binary tree, adhering to the structure and behavior
-    defined by the INode abstract base class.
+    defined by the AbstractNode abstract base class.
     """
 
     def __init__(self, key):

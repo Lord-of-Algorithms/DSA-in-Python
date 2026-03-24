@@ -19,7 +19,6 @@ class NumberDigit(Enum):
     TWO_DIGIT = 2
     THREE_DIGIT = 3
     FOUR_DIGIT = 4
-    digit = 0
 
     def __init__(self, digit):
         self.digit = digit

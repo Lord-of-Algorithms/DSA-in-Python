@@ -79,7 +79,7 @@ class HashTableBucket:
         print()  # For newline
 
 
-class HashFunctonType(Enum):
+class HashFunctionType(Enum):
     Division = 1
     Multiplication = 2
 
@@ -131,9 +131,9 @@ class HashTable:
         """
         hash_code = hash(key)
 
-        if self.hash_function_type == HashFunctonType.Division:
+        if self.hash_function_type == HashFunctionType.Division:
             return abs(hash_code) % len(self.bucket_array)
-        elif self.hash_function_type == HashFunctonType.Multiplication:
+        elif self.hash_function_type == HashFunctionType.Multiplication:
             # Use Decimal for high precision arithmetic
             product = Decimal(abs(hash_code)) * Decimal(self.A)
             fractional_part = product - int(product)

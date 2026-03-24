@@ -1,5 +1,6 @@
 from collections import deque
 
+from binary_tree.traversal.abstract_traversal import AbstractTraversal
 from binary_tree.traversal.traversal_nature import TraversalNature
 
 
@@ -34,7 +35,7 @@ def _recursive_in_order_traverse(node):
     _recursive_in_order_traverse(node.get_right())
 
 
-class InOrderTraversal:
+class InOrderTraversal(AbstractTraversal):
     """
     Class for performing in-order traversal on a binary tree.
     """

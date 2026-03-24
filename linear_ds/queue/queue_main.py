@@ -1,4 +1,4 @@
-from linear_ds.queue.bounded_array_qeueue import BoundedArrayQueue
+from linear_ds.queue.bounded_array_queue import BoundedArrayQueue
 from linear_ds.queue.dynamic_array_queue import DynamicArrayQueue
 from linear_ds.queue.linked_list_queue import LinkedListQueue
 
