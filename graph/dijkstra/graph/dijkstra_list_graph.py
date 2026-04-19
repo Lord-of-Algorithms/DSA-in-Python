@@ -1,5 +1,5 @@
 from graph.dijkstra.graph.dijkstra_graph import DijkstraGraph
-from graph.edge import Edge
+from graph.weighted_edge import WeightedEdge
 
 
 def replace_or_update_edge(edges, source, destination, weight):
@@ -12,7 +12,7 @@ def replace_or_update_edge(edges, source, destination, weight):
         if edge.source == source and edge.destination == destination:
             edges.remove(edge)
             break
-    edges.append(Edge(source, destination, weight))
+    edges.append(WeightedEdge(source, destination, weight))
 
 
 class DijkstraListGraph(DijkstraGraph):
@@ -54,7 +54,7 @@ class DijkstraListGraph(DijkstraGraph):
         if source not in self.adjacency_list or destination not in self.adjacency_list:
             raise ValueError("One or both vertices do not exist in the graph.")
         if weight < 0:
-            raise ValueError("Edge weight cannot be negative.")
+            raise ValueError("WeightedEdge weight cannot be negative.")
 
         edges = self.adjacency_list[source]
         replace_or_update_edge(edges, source, destination, weight)

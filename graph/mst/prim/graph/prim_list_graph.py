@@ -1,4 +1,4 @@
-from graph.edge import Edge
+from graph.weighted_edge import WeightedEdge
 from graph.mst.prim.graph.prim_graph import PrimGraph
 
 
@@ -58,7 +58,7 @@ class PrimListGraph(PrimGraph):
             if edge.source == source and edge.destination == destination:
                 edges.remove(edge)
                 break
-        edges.append(Edge(source, destination, weight))
+        edges.append(WeightedEdge(source, destination, weight))
 
     def get_edges_for_source(self, source):
         return self.adjacency_list.get(source, [])

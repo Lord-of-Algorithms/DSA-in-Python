@@ -6,7 +6,7 @@ is used because Kruskal's algorithm does not require direct access to the graph'
 efficient and straightforward for calculating the MST in graphs where edge connectivity is the primary concern.
 """
 
-from graph.edge import Edge
+from graph.weighted_edge import WeightedEdge
 from graph.mst.kruskal.union_find import UnionFind
 from graph.vertex import Vertex
 
@@ -49,11 +49,11 @@ def demo_kruskal_algorithm():
     vertices = [a, b, c, d]
 
     edges = [
-        Edge(a, b, 1),
-        Edge(d, b, 2),
-        Edge(b, c, 3),
-        Edge(a, d, 4),
-        Edge(d, c, 5)
+        WeightedEdge(a, b, 1),
+        WeightedEdge(d, b, 2),
+        WeightedEdge(b, c, 3),
+        WeightedEdge(a, d, 4),
+        WeightedEdge(d, c, 5)
     ]
 
     mst = build_mst(vertices, edges)

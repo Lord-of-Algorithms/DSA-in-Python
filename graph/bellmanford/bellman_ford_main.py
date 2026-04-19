@@ -8,7 +8,7 @@ detect negative weight cycles, which make shortest-path distances undefined.
 Time complexity: O(V * E), where V is the number of vertices and E is the number of edges.
 """
 
-from graph.edge import Edge
+from graph.weighted_edge import WeightedEdge
 from graph.vertex import Vertex
 
 INFINITY = float('inf')
@@ -113,13 +113,13 @@ def demonstrate_normal_graph():
     vertices = [a, b, c, d, e, f]
 
     edges = [
-        Edge(a, b, 5),
-        Edge(a, d, 2),
-        Edge(b, c, 5),
-        Edge(c, f, 10),
-        Edge(d, e, 5),
-        Edge(e, f, 7),
-        Edge(e, b, -10),
+        WeightedEdge(a, b, 5),
+        WeightedEdge(a, d, 2),
+        WeightedEdge(b, c, 5),
+        WeightedEdge(c, f, 10),
+        WeightedEdge(d, e, 5),
+        WeightedEdge(e, f, 7),
+        WeightedEdge(e, b, -10),
     ]
 
     distances, predecessors, has_negative_cycle = bellman_ford(vertices, edges, a)
@@ -151,13 +151,13 @@ def demonstrate_negative_cycle_graph():
     vertices = [a, b, c, d, e, f]
 
     edges = [
-        Edge(a, b, 5),
-        Edge(a, d, 2),
-        Edge(b, c, 3),
-        Edge(c, f, 4),
-        Edge(d, e, 5),
-        Edge(f, e, 2),
-        Edge(e, b, -15),  # Creates negative cycle: B -> C -> F -> E -> B
+        WeightedEdge(a, b, 5),
+        WeightedEdge(a, d, 2),
+        WeightedEdge(b, c, 3),
+        WeightedEdge(c, f, 4),
+        WeightedEdge(d, e, 5),
+        WeightedEdge(f, e, 2),
+        WeightedEdge(e, b, -15),  # Creates negative cycle: B -> C -> F -> E -> B
     ]
 
     distances, predecessors, has_negative_cycle = bellman_ford(vertices, edges, a)

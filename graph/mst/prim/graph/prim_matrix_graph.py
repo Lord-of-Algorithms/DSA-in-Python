@@ -1,4 +1,4 @@
-from graph.edge import Edge
+from graph.weighted_edge import WeightedEdge
 from graph.mst.prim.graph.prim_graph import PrimGraph
 
 
@@ -58,7 +58,7 @@ class PrimMatrixGraph(PrimGraph):
         edges = []
         for i, weight in enumerate(self.adjacency_matrix[index]):
             if weight != self.NO_EDGE:
-                edges.append(Edge(source, self.get_vertex_by_index(i), weight))
+                edges.append(WeightedEdge(source, self.get_vertex_by_index(i), weight))
         return edges
 
     def get_vertex_by_index(self, index):
