@@ -16,6 +16,10 @@ def build_mst(vertices, edges):
     Constructs the minimum spanning tree (MST) for a graph represented by vertices and edges.
     Assumes that the graph is connected.
 
+    Edge direction is ignored — only the two connected vertices and the weight matter.
+    The Union-Find structure treats each edge as undirected: union(u, v) and union(v, u)
+    produce the same result.
+
     :param vertices: List of vertices in the graph.
     :param edges: List of edges in the graph, where each edge has a source, destination, and weight.
     :return: List of edges that form the minimum spanning tree.
