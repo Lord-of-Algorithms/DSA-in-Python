@@ -4,10 +4,11 @@ This repository supplements our mobile app "VisiGrab: Algorithms & DSA", which o
 ## Topics Covered
 
 - **Binary Trees** — BST (Standard, AVL, Red-Black), In-order / Pre-order / Post-order / Breadth-first traversals
-- **Graphs** — BFS/DFS traversal, Dijkstra, Bellman-Ford, Minimum Spanning Tree (Kruskal, Prim). The app also features an interactive Graph Constructor — tap to add vertices, drag between them to add edges, and watch the algorithms run on your custom graph in real time.
+- **Graphs** — BFS/DFS traversal, Dijkstra, Bellman-Ford, Minimum Spanning Tree (Kruskal, Prim), Topological Sort. The app also features an interactive Graph Constructor — tap to add vertices, drag between them to add edges, and watch the algorithms run on your custom graph in real time.
 - **Linear Data Structures** — Array, Linked List, Stack, Queue
 - **Sorting** — Bubble, Insertion, Selection, Merge, Quick (Lomuto & Hoare), Heap Sort
 - **Hash Table**
+- **Trie**
 - **Union-Find**
 
 ## Contributing
@@ -36,9 +37,11 @@ Then run any example:
 ```
 python3 -m binary_tree.bst_main
 python3 -m graph.dijkstra.dijkstra_main
+python3 -m graph.topologicalsort.topological_sort_main
 python3 -m linear_ds.queue.queue_main
 python3 -m sorting.quick.quick_sort_main
 python3 -m hashtable.hash_table_main
+python3 -m trie.trie_main
 ```
 
 ## License
