@@ -106,13 +106,13 @@ class DoubleEndedLinkedList:
             return
 
         pred = self.head
-        temp = self.head.next
-        while temp is not None and temp.data != value:
+        cur = self.head.next
+        while cur is not None and cur.data != value:
             pred = pred.next
-            temp = temp.next
+            cur = cur.next
 
-        if temp is not None:
-            pred.next = temp.next
+        if cur is not None:
+            pred.next = cur.next
             if pred.next is None:
                 self.tail = pred
         else:

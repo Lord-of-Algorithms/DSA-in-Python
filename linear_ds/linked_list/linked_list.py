@@ -85,14 +85,14 @@ class LinkedList:
             self.head = self.head.next
             return
         pred = self.head
-        temp = self.head.next
-        while temp is not None and temp.data != value:
+        cur = self.head.next
+        while cur is not None and cur.data != value:
             pred = pred.next
-            temp = temp.next
-        if temp is not None:
+            cur = cur.next
+        if cur is not None:
             # The node to be deleted is found.
             # Delete it by changing references.
-            pred.next = temp.next
+            pred.next = cur.next
         else:
             raise ValueError(f"Value {value} not found in the list.")
 
@@ -107,8 +107,8 @@ class LinkedList:
             self.head = None
             return
         pred = self.head
-        temp = self.head.next
-        while temp.next is not None:
+        cur = self.head.next
+        while cur.next is not None:
             pred = pred.next
-            temp = temp.next
+            cur = cur.next
         pred.next = None
