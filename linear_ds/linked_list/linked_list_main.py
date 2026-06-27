@@ -1,4 +1,6 @@
+from linear_ds.linked_list.double_ended_doubly_linked_list import DoubleEndedDoublyLinkedList
 from linear_ds.linked_list.double_ended_linked_list import DoubleEndedLinkedList
+from linear_ds.linked_list.doubly_linked_list import DoublyLinkedList
 from linear_ds.linked_list.linked_list import LinkedList
 
 
@@ -57,6 +59,45 @@ def demo_double_ended_linked_list():
     print_list(dll.head)
 
 
+def _demo_doubly(name, dl):
+    print(f"\nDemo: {name}")
+    dl.insert_first("C")
+    dl.insert_first("B")
+    dl.insert_first("A")
+    print("Inserting C, B, A at the start:")
+    print_list(dl.head)
+
+    dl.insert_last("D")
+    print("Inserting D at the end:")
+    print_list(dl.head)
+
+    dl.insert_after("B", "E")
+    print("Inserting E after B:")
+    print_list(dl.head)
+
+    dl.delete_first()
+    print("Deleting first:")
+    print_list(dl.head)
+
+    dl.delete_by_value("E")
+    print("Deleting by value (E):")
+    print_list(dl.head)
+
+    dl.delete_last()
+    print("Deleting last:")
+    print_list(dl.head)
+
+
+def demo_doubly_linked_list():
+    _demo_doubly("DoublyLinkedList", DoublyLinkedList())
+
+
+def demo_double_ended_doubly_linked_list():
+    _demo_doubly("DoubleEndedDoublyLinkedList", DoubleEndedDoublyLinkedList())
+
+
 if __name__ == "__main__":
     demo_linked_list()
     demo_double_ended_linked_list()
+    demo_doubly_linked_list()
+    demo_double_ended_doubly_linked_list()
