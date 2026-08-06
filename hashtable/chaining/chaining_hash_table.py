@@ -80,8 +80,16 @@ class HashTableBucket:
 
 
 class HashFunctionType(Enum):
-    Division = 1
-    Multiplication = 2
+    """
+    The method used to map a key to its home slot.
+
+    The hash function is independent of how collisions are resolved — either
+    method works equally well with chaining or with open addressing. Both are
+    offered here only to demonstrate the two classic approaches; the
+    open-addressing table fixes the Division method to keep the focus on probing.
+    """
+    Division = 1        # h(k) = k mod m
+    Multiplication = 2  # h(k) = floor(m * ((k * A) mod 1)), where A = (sqrt(5) - 1) / 2
 
 
 def next_prime(start):
@@ -108,11 +116,11 @@ def is_prime(num):
     return True
 
 
-class HashTable:
+class ChainingHashTable:
     """
     A hash table implementation using chaining with linked lists to resolve collisions.
     This class provides methods for inserting, retrieving, and removing key-value pairs,
-    where keys are strings and values are numbers.
+    where keys are names (strings) and values are phone numbers (strings).
     """
 
     def __init__(self, capacity, hash_function_type):

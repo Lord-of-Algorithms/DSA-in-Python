@@ -8,7 +8,7 @@ This repository supplements our mobile app "VisiGrab: Algorithms & DSA", which o
 - **Linear Data Structures** — Array, Linked List, Stack, Queue
 - **Min-Heap**
 - **Sorting** — Bubble, Insertion, Selection, Merge, Quick (Lomuto & Hoare), Heap Sort
-- **Hash Table**
+- **Hash Table** — Chaining, Open Addressing (linear & quadratic probing)
 - **Trie**
 - **Union-Find**
 
