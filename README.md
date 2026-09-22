@@ -4,6 +4,7 @@ This repository supplements our mobile app "VisiGrab: Algorithms & DSA", which o
 ## Topics Covered
 
 - **Binary Trees** — BST (Standard, AVL, Red-Black), In-order / Pre-order / Post-order / Breadth-first traversals
+- **B-Tree** — search, insertion with node splits, deletion with borrowing and merging. The app also features an interactive B-Tree Constructor — add and remove keys, choose how large the nodes may grow, and step through every split, borrow and merge as it happens.
 - **Graphs** — BFS/DFS traversal, Dijkstra, Bellman-Ford, Minimum Spanning Tree (Kruskal, Prim), Topological Sort. The app also features an interactive Graph Constructor — tap to add vertices, drag between them to add edges, and watch the algorithms run on your custom graph in real time.
 - **Linear Data Structures** — Array, Linked List, Stack, Queue
 - **Min-Heap**
